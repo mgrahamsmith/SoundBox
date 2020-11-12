@@ -27,10 +27,10 @@ This is the primary source code for the project.
 
 2. Open `SoundBox\source\_build\SoundBox.sln` in Visual Studio.
 
-3. Right-click `All_BUILD`, and select Build'
+3. Right-click `All_BUILD`, and select 'Build'.
 
 ## Running
-From `SoundBox\source\\_build`, run 
+From `SoundBox\source\_build`, run `play.exe`.
 
 ## License
 This work is licensed under the terms of the MIT license.
