@@ -3,7 +3,7 @@ Cross-platform desktop application for low level sound manipulation.
 
 ...well, cross-platform some day.
 
-# Plans
+## Plans
 * Windows 10 / Linux Ubuntu support.  MacOS if I have the tolerance.
 * Low level sound manipulation, simple GUI, native desktop application.
 
@@ -16,5 +16,6 @@ Cross-platform desktop application for low level sound manipulation.
 ## Linux
 * TBD
 
-# Notes
-Will be following CMake Cookbook through this project, and maybe some others TBD.
+## [License](./LICENSE)
+This work is licensed under the terms of the MIT license.
+For a copy, see <https://opensource.org/licenses/MIT>.
