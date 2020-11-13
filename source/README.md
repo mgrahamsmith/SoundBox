@@ -41,13 +41,12 @@ Useful commands:
     * `pipenv run` to run a commend in environment.
 
 Do this:
-`$ pip install --user pip pipenv --upgrade`
+`$ pip install --user pip pipenv --upgrade`  
 NOTE: This may happen for the `--upgrade` step:  
 ```
 WARNING: The scripts pip.exe, pip3.8.exe and pip3.exe are installed in 'C:\Users\<user>/.local/bin' which is not on PATH.
 Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location. 
 ```
-`$ pipenv install --python python3.5`  
 <div style="color:red">ERROR: Getting the following result for this:</div>
 
 `$ pipenv install --python python3.5`
@@ -58,26 +57,61 @@ You can specify specific versions of Python with:
 $ pipenv --python path/to/python
 (SoundBox-R8wHh5Fp)
 ```
-<div style="color:red">SKIPPING...</div>
+<div style="color:red">SKIPPING...  </div>
 
 See [other stuff](#other-stuff) I added for personal preference, but not required.
 
 ### To Build
-1. From [SoundBox\source](../source):
-    `> md _build`
+
+### Building with Ninja:
+Starting fresh (removing `_build` dir from above):
+```
+$ cmake -G Ninja ..
+-- The CXX compiler identification is GNU 10.2.0
+-- Check for working CXX compiler: C:/msys64/mingw64/bin/c++.exe
+-- Check for working CXX compiler: C:/msys64/mingw64/bin/c++.exe - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/repos/SoundBox/source/_build
+```
+
+Build:
+```
+$ cmake --build .
+[1/2] Building CXX object CMakeFiles/play.dir/play.cpp.obj
+[2/2] Linking CXX executable play.exe
+
+```
+
+### To Run
+From `SoundBox/source/_build`, run `$ ./Debug/play.exe`
+<div style="color:red">ERROR: this results in</div>
+![play-user-error](./docs/images/play_sys_err.PNG)
+
+
+
+### Broken builds
+
+#### Building with mingw GCC
+1. From [SoundBox/source](../source):
+    `> mkdir _build`
     `> cd _build`
     `> cmake ..`
 
     (TODO: change for mingw)  
     Expected output:
     ```
-    SoundBox\source\_build>cmake ..
-    -- Building for: Visual Studio 16 2019
+    $ cmake ..
     -- Selecting Windows SDK version 10.0.18362.0 to target Windows 10.0.18363.
     -- The CXX compiler identification is MSVC 19.27.29111.0
+    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe
+    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe - works
     -- Detecting CXX compiler ABI info
     -- Detecting CXX compiler ABI info - done
-    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe - skipped
     -- Detecting CXX compile features
     -- Detecting CXX compile features - done
     -- Configuring done
@@ -85,12 +119,51 @@ See [other stuff](#other-stuff) I added for personal preference, but not require
     -- Build files have been written to: D:/repos/SoundBox/source/_build
     ```
 
-1. Open `SoundBox\source\_build\SoundBox.sln` in Visual Studio.
+    <div style="color:red">ERRORD: Realized output:</div>
 
-3. Right-click `All_BUILD`, and select 'Build'.
+    ```
+    $ cmake ..
+    -- Building for: Visual Studio 16 2019
+    -- Selecting Windows SDK version 10.0.18362.0 to target Windows 10.0.18363.
+    -- The CXX compiler identification is MSVC 19.27.29111.0
+    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe
+    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe - works
+    -- Detecting CXX compiler ABI info
+    -- Detecting CXX compiler ABI info - done
+    -- Detecting CXX compile features
+    -- Detecting CXX compile features - done
+    -- Configuring done
+    -- Generating done
+    -- Build files have been written to: D:/repos/SoundBox/source/_build
+    ```
+    <div style="color:red">Moving on...</div>
+    
+1. Compile  
+    Expected:  
+    ```
+    $ cmake --build .
 
-### To Run
-From `SoundBox\source\_build`, run `play.exe`.
+    Scanning dependencies of target hello-world
+    [ 50%] Building CXX object CMakeFiles/hello-world.dir/hello-world.cpp.o
+    [100%] Linking CXX executable hello-world
+    [100%] Built target hello-world
+    ```
+
+    <div style="color:red">ERRORD: Realized output:</div>
+
+    ```
+    $ cmake ..
+    Microsoft (R) Build Engine version 16.7.0+b89cb5fde for .NET Framework
+    Copyright (C) Microsoft Corporation. All rights reserved.
+
+      Checking Build System
+      Building Custom Rule D:/repos/SoundBox/source/CMakeLists.txt
+      play.cpp
+      play.vcxproj -> "D:\repos\SoundBox\source\_build\Debug\play.exe
+      Building Custom Rule D:/repos/SoundBox/source/CMakeLists.txt
+    ```
+    <div style="color:red">Moving on...</div>
+
 
 ## Other Stuff
 --------------
