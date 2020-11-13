@@ -1,16 +1,15 @@
 # Primary Source Tree
----------------------
 This is the primary source code for the project.
 
 ## Building and Running
 -----------------------
-
-### Pre-requisites (Windows only)
 Tested on Windows env:
 ```
 OS Name:    Microsoft Windows 10 Home
 OS Version: 10.0.18363 N/A Build 18363
 ```
+
+### Pre-requisites (Windows only)
 1. Install [MSYS2](https://www.msys2.org/).
 1. Once MSYS2 is installed, open a `mingw64` terminal:  
 `> C:\msys64\mingw64.exe`  
@@ -119,7 +118,7 @@ From `SoundBox/source/_build`, run `$ ./Debug/play.exe`
     -- Build files have been written to: D:/repos/SoundBox/source/_build
     ```
 
-    <div style="color:red">ERRORD: Realized output:</div>
+    <div style="color:red">ERROR: Realized output:</div>
 
     ```
     $ cmake ..
