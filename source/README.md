@@ -16,9 +16,9 @@ OS Version: 10.0.18363 N/A Build 18363
 _NOTE: Make sure you are running mingw 64-bit.  When in 32-bit, the installations complete just fine, but the recently-installed commands like `cmake` and `gcc` aren't found._
 1. Install the following using `pacman`:
     * CMake: `$ pacman -S mingw64/mingw-w64-x86_64-cmake`
-        * Ver: 3.17.3 (all version are as-installed when I wrote this)
-    * GCC Compiler toolchain: `$ pacman -S mingw64/mingw-w64-x86_64-toolchain`  
-        * Ver: gcc.exe (Rev1, Built by MSYS2 project) 10.2.0
+        * Ver: 3.17.3
+    * GCC Compiler toolchain: `$ pacman -S mingw64/mingw-w64-x86_64-toolchain`
+        * Ver: g++.exe (Rev1, Built by MSYS2 project) 10.2.0
         * NOTE: C/C++/FORTRAN compilers all included.
     * Ninja: `$ pacman -S mingw64/mingw-w64-x86_64-ninja`
         * Ver: 1.10.1
@@ -31,7 +31,7 @@ _NOTE: Make sure you are running mingw 64-bit.  When in 32-bit, the installation
         Versions:
         * Python 3.8.5
         * pip 20.0.2 from C:/msys64/mingw64/lib/python3.8/site-packages/pip (python 3.8) 
-        * pipenv, version 2020.11.4
+        * pipenv, version 2020.11.15
 
 1.  Use `pipenv` to created an isolated build environment:  
 Useful commands:
