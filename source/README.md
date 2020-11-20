@@ -1,7 +1,7 @@
 # Alternate Build Instructions
 Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh MSYS2 install...
 
-## Pre-req Steps
+## Prerequisites
 1.  Uninstall and reinstall MSYS2 64 bit.
     Note: Immediately after stall, `python` gives  
     `bash: python: command not found`
@@ -72,7 +72,7 @@ Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh
 
 
 
-## Build Instructions:
+## Build Instructions
 1.  From `source` dir, run: `$ ./build.sh`
 
 

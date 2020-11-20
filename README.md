@@ -14,8 +14,7 @@ Cross-platform desktop application for low level sound manipulation.
 
 ## Windows 10
 -------------
-* Visual Studio 2019
-* mingw? - [in-work](./source/README.md#pre-requisites)
+* MinGW64 - [Build Instructions](./source/README.md#Build-Instructions)
 * [Windows Core Audio APIs](https://docs.microsoft.com/en-us/windows/win32/coreaudio/core-audio-apis-in-windows-vista)
 * Ninja?
 
@@ -25,8 +24,8 @@ Cross-platform desktop application for low level sound manipulation.
 
 ## Project Contents:
 --------------------
-Source:
-* [Building and Running](./source/README.md)
+* Source
+    * [Building and Running](./source/README.md)
 
 ## [License](./LICENSE)
 -----------------------

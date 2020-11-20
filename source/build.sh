@@ -4,7 +4,14 @@
 
 # MinGW Build Script
 
-mkdir _build
-cd _build
-cmake .. -G "MinGW Makefiles"
-cmake --build .
+BUILD_DIR="_build"
+SOURCE_DIR=.
+CMAKE_GENERATOR="MinGW Makefiles"
+
+if [ ! d ${BUILD_DIR} ]
+then
+    mkdir ${BUILD_DIR}
+fi
+
+cmake -G "${CMAKE_GENERATOR}" -H${SOURCE_DIR} -B${BUILD_DIR}
+cmake --build ${BUILD_DIR}
