@@ -47,7 +47,7 @@ Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh
     Result: `bash: pip: command not found`  
     Skipping... 
 
-10.  `pipenv install --python python3.5`  
+1.  `pipenv install --python python3.5`  
     Result:
     ```
     Warning: Python python3.5 was not found on your system...
@@ -57,42 +57,24 @@ Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh
     ```
     Skipping...
 
+11. Needed to install `make` separately, otherwise the generator kept defaulting 
+    to Visual Studio.  The toolchain should have taken care of this in step 4.
+    Install make: `$ pacman -S make`  
+    ```
+    $ make --version
+    GNU Make 4.3
+    Built for x86_64-pc-msys
+    Copyright (C) 1988-2020 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+    ```
+
+
 
 ## Build Instructions:
-1. Create _build folder and generate build files.
-    ```
-    $ mkdir -p _build
-    $ cd _build
-    $ cmake ..
-    ```
-    Result:
-    ```
-    -- Building for: Visual Studio 16 2019
-    -- Selecting Windows SDK version 10.0.18362.0 to target Windows 10.0.18363.
-    -- The CXX compiler identification is MSVC 19.28.29333.0
-    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/bin/Hostx64/x64/cl.exe
-    -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/bin/Hostx64/x64/cl.exe - works
-    -- Detecting CXX compiler ABI info
-    -- Detecting CXX compiler ABI info - done
-    -- Detecting CXX compile features
-    -- Detecting CXX compile features - done
-    -- Configuring done
-    -- Generating done
-    -- Build files have been written to: D:/repos/SoundBox/source/_build
-    ```
+1.  From `source` dir, run: `$ ./build.sh`
 
-    NOTE: not finding Gcc, but MSVC automatically....
 
-    Info: `cmake --help` produces:
-    ```
-    ...
-    Generators
-
-    The following generators are available on this platform (* marks default):
-    * Visual Studio 16 2019        = Generates Visual Studio 2019 project files.
-                                    Use -A option to specify architecture.
-    Visual Studio 15 2017 [arch] = Generates Visual Studio 2017 project files.
-    ...
-    ```
-
-    Notice VS 2019 set as default.
+## To Run:
+1.  From `_build` dir, run: `$ ./play.exe`
