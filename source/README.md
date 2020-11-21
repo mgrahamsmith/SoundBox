@@ -2,9 +2,7 @@
 Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh MSYS2 install...
 
 ## Prerequisites
-1.  Uninstall and reinstall MSYS2 64 bit.
-    Note: Immediately after stall, `python` gives  
-    `bash: python: command not found`
+1.  Install MSYS2 64 bit.
 
 1.  Install git: `$ pacman -S git`  
     `git version 2.27.0`
@@ -21,13 +19,27 @@ Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh
     ```
     NOTE: installs gcc/g++, not clang.
 
-5.  Install Ninja: `$ pacman -S mingw64/mingw-w64-x86_64-ninja`  
+1.  Install Ninja: `$ pacman -S mingw64/mingw-w64-x86_64-ninja`  
     `1.10.1`
 
-1.  Install Python: `$ pacman -S mingw64/mingw-w64-x86_64-python3`  
+1.  Install make: `$ pacman -S make`  
+    ```
+    $ make --version
+    GNU Make 4.3
+    Built for x86_64-pc-msys
+    Copyright (C) 1988-2020 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+    ```  
+
+    NOTE: Needed to install `make` separately, otherwise the generator kept defaulting 
+    to Visual Studio.  The toolchain should have taken care of this in step 4 (TODO).  
+
+1.  (Optional) Install Python: `$ pacman -S mingw64/mingw-w64-x86_64-python3`  
     `Python 3.8.5`
 
-1.  Install pip: `$ pacman -S mingw64/mingw-w64-x86_64-python3-pip`  
+1.  (Optional) Install pip: `$ pacman -S mingw64/mingw-w64-x86_64-python3-pip`  
     `pip` not working... but the folllowing works:
     ```
     $ python -m pip --version
@@ -40,14 +52,14 @@ Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh
     error: failed to commit transaction (conflicting files)
     ```
 
-1.  `$ python3 -m pip install pipenv`
+1.  (Optional) `$ python3 -m pip install pipenv`
 
-1.  Use Pipenv to generate an isolated environment.  
+1.  (Optional) Use Pipenv to generate an isolated environment.  
     `$ pip install --user pip pipenv --upgrade`  
     Result: `bash: pip: command not found`  
     Skipping... 
 
-1.  `pipenv install --python python3.5`  
+1.  (Optional) `pipenv install --python python3.5`  
     Result:
     ```
     Warning: Python python3.5 was not found on your system...
@@ -56,19 +68,6 @@ Issues with previous `virtualenv` in MSYS2 caused issues.  Starting with a fresh
     $ pipenv --python path/to/python
     ```
     Skipping...
-
-11. Needed to install `make` separately, otherwise the generator kept defaulting 
-    to Visual Studio.  The toolchain should have taken care of this in step 4.
-    Install make: `$ pacman -S make`  
-    ```
-    $ make --version
-    GNU Make 4.3
-    Built for x86_64-pc-msys
-    Copyright (C) 1988-2020 Free Software Foundation, Inc.
-    License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-    This is free software: you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.
-    ```
 
 
 
