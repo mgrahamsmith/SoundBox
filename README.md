@@ -1,4 +1,9 @@
+[//]: # (I Build Logs)
+
+[![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/mgrahamsmith.SoundBox?branchName=pipeline_setup)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=pipeline_setup)
+
 # SoundBox
+
 Cross-platform desktop application for low level audio manipulation.
 
 Current support: Windows 10 only.
