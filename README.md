@@ -1,6 +1,6 @@
-[//]: # (I Build Logs)
+[//]: # (Azure Build Logs)
 
-[![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/mgrahamsmith.SoundBox?branchName=pipeline_setup)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=pipeline_setup)
+[![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/mgrahamsmith.SoundBox?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=azure-pipeline-cmake)
 
 # SoundBox
 
