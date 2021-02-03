@@ -10,39 +10,36 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   steps:
-  - script: |
-    echo hello from Linux
-    uname -a
-    cmake --version
-    cd
-    ls -l
-    mkdir build; cd build
-    cmake ../source
-    cmake --build .
+  - script: echo hello from Linux
+  - script: uname -a
+  - script: cmake --version
+  - script: cd
+  - script: ls -l
+  - script: mkdir build; cd build
+  - script: cmake ../source
+  - script: cmake --build .
 
 - job: Windows Build
   pool:
     vmImage: 'windows-latest'
   steps:
-  - script: |
-    echo hello from Windows
-    systeminfo
-    cd
-    dir
-    md build; cd build
-    cmake ..\source
-    cmake --build .
+  - script: echo hello from Windows
+  - script: systeminfo
+  - script: cd
+  - script: dir
+  - script: md build; cd build
+  - script: cmake ..\source
+  - script: cmake --build .
 
 
 - job: macOS
   pool:
     vmImage: 'macOS-latest'
   steps:
-  - script: |
-    echo hello from macOS
-    system_profiler
-    cmake --version
-    ls -l
-    mkdir build; cd build
-    cmake ../source
-    cmake --build .
+  - script: echo hello from macOS
+  - script: system_profiler
+  - script: cmake --version
+  - script: ls -l
+  - script: mkdir build; cd build
+  - script: cmake ../source
+  - script: cmake --build .
