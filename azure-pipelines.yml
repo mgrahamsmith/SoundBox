@@ -11,18 +11,22 @@ jobs:
     vmImage: 'ubuntu-latest'
   steps:
   - script: echo hello from Linux
+  - script: lscpu -a
+  - script: uname -a
+  - script: where cmake
 
 - job: Windows
   pool:
     vmImage: 'windows-latest'
   steps:
   - script: echo hello from Windows
+  - script: systeminfo
+  - script: where cmake
 
-# - job: macOS
-#   pool:
-#     vmImage: 'macOS-latest'
-#   steps:
-#   - script: echo hello from macOS
-
-pool:
-  vmImage: 'ubuntu-latest'
+- job: macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+  - script: echo hello from macOS
+  - script: uname -a
+  - script: where cmake
