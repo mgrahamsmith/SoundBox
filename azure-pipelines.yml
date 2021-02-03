@@ -19,7 +19,7 @@ jobs:
   - script: cmake ../source
   - script: cmake --build .
 
-- job: Windows Build
+- job: Windows
   pool:
     vmImage: 'windows-latest'
   steps:
