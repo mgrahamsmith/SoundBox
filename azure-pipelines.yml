@@ -12,7 +12,7 @@ jobs:
   steps:
   - script: echo hello from Linux
   - script: uname -a
-  - script: where cmake
+  - script: cmake --version
 
 - job: Windows
   pool:
@@ -20,7 +20,7 @@ jobs:
   steps:
   - script: echo hello from Windows
   - script: systeminfo
-  - script: where cmake
+  - script: cmake --version
 
 - job: macOS
   pool:
@@ -28,4 +28,4 @@ jobs:
   steps:
   - script: echo hello from macOS
   - script: system_profiler
-  - script: where cmake
+  - script: cmake --version
