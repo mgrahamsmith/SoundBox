@@ -15,9 +15,9 @@ jobs:
     uname -a
     cmake --version
     cd
-    dir
-    md build; cd build
-    cmake ..
+    ls -l
+    mkdir build; cd build
+    cmake ../source
     cmake --build .
 
 - job: Windows Build
@@ -30,7 +30,7 @@ jobs:
     cd
     dir
     md build; cd build
-    cmake ..
+    cmake ..\source
     cmake --build .
 
 
@@ -42,7 +42,7 @@ jobs:
     echo hello from macOS
     system_profiler
     cmake --version
-    dir
-    md build; cd build
-    cmake ..
+    ls -l
+    mkdir build; cd build
+    cmake ../source
     cmake --build .
