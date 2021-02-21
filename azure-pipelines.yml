@@ -30,7 +30,8 @@ jobs:
   - script: cmake --version
   - script: cmake --system-information
   - script: dir
-  - script: md build; cd build
+  - script: md build 2>&1
+  - script: cd build
   ## - script: cmake ..\source
   ## - script: cmake --build .
 
