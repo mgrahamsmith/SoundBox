@@ -10,7 +10,6 @@ pool:
 steps:
 - script: |
         echo hello from macOS
-        system_profiler
         cmake --version
         python3 --version
         ls -la
