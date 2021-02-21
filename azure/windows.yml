@@ -1,5 +1,9 @@
 # Windows build pipeline for SoundBox
 
+trigger:
+- master
+- azure-pipeline-cmake
+
 - job: Windows
   pool:
     vmImage: 'windows-latest'

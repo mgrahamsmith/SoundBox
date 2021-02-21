@@ -1,6 +1,10 @@
 # Mac OS Pipeline for SoundBox
 # https://aka.ms/yaml
 
+trigger:
+- master
+- azure-pipeline-cmake
+
 - job: macOS
   pool:
     vmImage: 'macOS-latest'
