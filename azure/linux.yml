@@ -1,0 +1,24 @@
+# Linux Pipeline for SoundBox
+
+trigger:
+- master
+- azure-pipeline-cmake
+
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: |
+        echo hello from Linux
+        uname -a
+        cmake --version
+        python3 --version
+        pwd
+        ls -l
+        mkdir build
+        cd build
+        pwd
+        ls -la
+        cmake ../source
+        cmake --build .
+

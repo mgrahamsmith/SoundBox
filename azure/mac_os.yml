@@ -1,0 +1,19 @@
+# Mac OS Pipeline for SoundBox
+# https://aka.ms/yaml
+
+- job: macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+  - script: |
+          echo hello from macOS
+          system_profiler
+          cmake --version
+          python3 --version
+          ls -la
+          mkdir build
+          cd build
+          pwd
+          ls -la
+          cmake ../source
+          cmake --build .
