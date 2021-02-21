@@ -3,8 +3,6 @@
 
 Cross-platform desktop application for low level audio manipulation.
 
-Current support: Windows 10 only.
-
 ## Continuous build status
 
 | Build Type  | Status |
