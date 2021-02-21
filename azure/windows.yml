@@ -4,7 +4,7 @@ trigger:
 - master
 - azure-pipeline-cmake
 
-- job: Windows
+- task: Windows
   pool:
     vmImage: 'windows-latest'
   steps:
