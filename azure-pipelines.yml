@@ -2,7 +2,8 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
+- azure-pipeline-cmake
 
 jobs:
 
