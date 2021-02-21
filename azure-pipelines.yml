@@ -13,11 +13,12 @@ jobs:
   - script: echo hello from Linux
   - script: uname -a
   - script: cmake --version
-  - script: cd
+  - script: cmake --system-information 
+  - script: pwd
   - script: ls -l
   - script: mkdir build; cd build
-  - script: cmake ../source
-  - script: cmake --build .
+  ## - script: cmake ../source
+  ## - script: cmake --build .
 
 - job: Windows
   pool:
@@ -26,10 +27,12 @@ jobs:
   - script: echo hello from Windows
   - script: systeminfo
   - script: cd
+  - script: cmake --version
+  - script: cmake --system-information
   - script: dir
   - script: md build; cd build
-  - script: cmake ..\source
-  - script: cmake --build .
+  ## - script: cmake ..\source
+  ## - script: cmake --build .
 
 
 - job: macOS
@@ -39,7 +42,8 @@ jobs:
   - script: echo hello from macOS
   - script: system_profiler
   - script: cmake --version
+  - script: cmake --system-information
   - script: ls -l
   - script: mkdir build; cd build
-  - script: cmake ../source
-  - script: cmake --build .
+  ## - script: cmake ../source
+  ## - script: cmake --build .
