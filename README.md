@@ -13,7 +13,7 @@ Cross-platform desktop application for low level audio manipulation.
 ## Project Documents
 -----------
 * [README](./source/README.md)
-* [Setup Instructions](.source/docs/SetupInstructions.md)
+* [Setup Instructions](./source/docs/SetupInstructions.md)
 
 ## Plans
 --------
