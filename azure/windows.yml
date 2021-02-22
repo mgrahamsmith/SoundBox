@@ -1,4 +1,4 @@
-# Windows build pipeline for SoundBox
+# Windows Pipeline for SoundBox
 
 trigger:
 - master
@@ -8,15 +8,9 @@ pool:
   vmImage: 'windows-latest'
 steps:
 - script: |
-      echo hello from Windows
-      systeminfo
-      cd
       cmake --version
       python3 --version
-      dir
       md build 2>&1
       cd build
-      cd
-      dir
       cmake ..\source
       cmake --build .

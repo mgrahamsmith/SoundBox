@@ -1,5 +1,4 @@
-# Mac OS Pipeline for SoundBox
-# https://aka.ms/yaml
+# MacOS Pipeline for SoundBox
 
 trigger:
 - master
@@ -12,12 +11,7 @@ steps:
         echo hello from macOS
         cmake --version
         python3 --version
-        ls -la
         mkdir build
         cd build
-        pwd
-        ls -la
         cmake ../source
         cmake --build .
-
-- script: echo ERROR
