@@ -11,12 +11,10 @@ Cross-platform desktop application for low level audio manipulation.
 | **Linux**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Linux?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=2&branchName=azure-pipeline-cmake)  |
 | **MacOS**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/MacOS?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=3&branchName=azure-pipeline-cmake) |
 
-## Project Contents
+## Project Documents
 -----------
-* source
-    * [README](./source/README.md)
-    * docs
-        * [Setup Instructions](.source/docs/SetupInstructions.md)
+* [README](./source/README.md)
+* [Setup Instructions](.source/docs/SetupInstructions.md)
 
 ## Plans
 --------

@@ -16,4 +16,3 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 elseif(CMAKE_CXX_COMPILER_ID MATCHES AppleClang)
     target_compile_definitions(play PUBLIC "IS_APPLE_CLANG_COMPILER")
 endif()
-
