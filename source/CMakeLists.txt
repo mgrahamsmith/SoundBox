@@ -5,8 +5,8 @@ add_executable(play play.cpp)
 
 target_compile_definitions(play PUBLIC "COMPILER_NAME=\"${CMAKE_CXX_COMPILER_ID}\"" )
 
-message("CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
-message("CMAKE_CXX_COMPILER_ID=${CMAKE_CXX_COMPILER_ID}")
+message(STATUS "CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
+message(STATUS "CMAKE_CXX_COMPILER_ID=${CMAKE_CXX_COMPILER_ID}")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     message(STATUS "Configuring on Windows")
