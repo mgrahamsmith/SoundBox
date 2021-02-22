@@ -5,7 +5,20 @@
 #include <iostream>
 #include <string>
 
-std::string play_sound() { 
+#include "sounds.hpp"
+
+int main()
+{
+    std::cout << play_sound() << std::endl;
+	std::cout << "compiler name is " COMPILER_NAME << std::endl;
+
+    getAudioDevice();
+
+    return 0;
+}
+
+std::string play_sound() 
+{ 
 #ifdef IS_MSVC_CXX_COMPILER
 	return std::string("Let's play a sound on Windows!"); 
 #elif IS_GNU_CXX_COMPILER
@@ -15,11 +28,4 @@ std::string play_sound() {
 #else
 	return std::string("Attempting to play sound on unknown platform.");
 #endif
-}
-
-int main()
-{
-    std::cout << play_sound() << std::endl;
-	std::cout << "compiler name is " COMPILER_NAME << std::endl;
-    return 0;
 }
