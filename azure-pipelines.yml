@@ -15,13 +15,15 @@ jobs:
         echo hello from Linux
         uname -a
         cmake --version
-        cmake --system-information 
+        python3 --version
         pwd
         ls -l
         mkdir build
         cd build
         pwd
         ls -la
+        cmake ../source
+        cmake --build .
 
 - job: Windows
   pool:
@@ -32,12 +34,14 @@ jobs:
         systeminfo
         cd
         cmake --version
-        cmake --system-information
+        python3 --version
         dir
         md build 2>&1
         cd build
         cd
-        ls -la
+        dir
+        cmake ..\source
+        cmake --build .
 
 - job: macOS
   pool:
@@ -47,9 +51,11 @@ jobs:
           echo hello from macOS
           system_profiler
           cmake --version
-          cmake --system-information
-          ls -l
+          python3 --version
+          ls -la
           mkdir build
           cd build
           pwd
-          ls -l
+          ls -la
+          cmake ../source
+          cmake --build .
