@@ -1,13 +1,21 @@
 # This work is licensed under the terms of the MIT license.
 # For a copy, see <https://opensource.org/licenses/MIT>.
 
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-
-project(SoundBox LANGUAGES CXX)
-
 add_executable(play play.cpp)
 
 target_compile_definitions(play PUBLIC "COMPILER_NAME=\"${CMAKE_CXX_COMPILER_ID}\"" )
+
+message("CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
+message("CMAKE_CXX_COMPILER_ID=${CMAKE_CXX_COMPILER_ID}")
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    message(STATUS "Configuring on Windows")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    message(STATUS "Configuring on Linux")
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    message(STATUS "Configuring on MacOS")
+endif()
+
 
 if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
     target_compile_definitions(play PUBLIC "IS_MSVC_CXX_COMPILER") 

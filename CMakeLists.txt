@@ -3,6 +3,6 @@
 
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-project(SoundBox LANGUAGES CXX)
+project(SoundBox LANGUAGES NONE)
 
 add_subdirectory(source)
