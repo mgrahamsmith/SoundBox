@@ -11,7 +11,7 @@ std::string play_sound() {
 #elif IS_GNU_CXX_COMPILER
 	return std::string("Let's play a sound on Linux!");
 #elif IS_APPLE_CLANG_CXX_COMPILER
-	return std::strign("Let's play a sound on MacOS!") // <- Cause compiler error to test CI.
+	return std::string("Let's play a sound on MacOS!") // <- Cause compiler error to test CI.
 #else
 	return std::string("Attempting to play sound on unknown platform.");
 #endif

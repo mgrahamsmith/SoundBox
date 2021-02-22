@@ -11,5 +11,5 @@ steps:
       python3 --version
       mkdir build
       cd build
-      cmake ../source
+      cmake ..
       cmake --build .

@@ -13,5 +13,5 @@ steps:
         c++ --version
         mkdir build
         cd build
-        cmake ../source
+        cmake ..
         cmake --build .

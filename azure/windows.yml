@@ -11,5 +11,5 @@ steps:
       python3 --version
       md build 2>&1
       cd build
-      cmake ..\source
+      cmake ..
       cmake --build .
