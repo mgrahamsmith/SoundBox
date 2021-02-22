@@ -1,4 +1,3 @@
-
 # SoundBox
 
 Cross-platform desktop application for low level audio manipulation.
