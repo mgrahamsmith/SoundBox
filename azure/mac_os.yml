@@ -1,0 +1,17 @@
+# MacOS Pipeline for SoundBox
+
+trigger:
+- master
+
+pool:
+  vmImage: 'macOS-latest'
+steps:
+- script: |
+        echo hello from macOS
+        cmake --version
+        python3 --version
+        c++ --version
+        mkdir build
+        cd build
+        cmake ../source
+        cmake --build .

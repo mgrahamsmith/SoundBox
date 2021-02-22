@@ -1,16 +1,19 @@
-[//]: # (Azure Build Logs)
-
-[![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/mgrahamsmith.SoundBox?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=azure-pipeline-cmake)
-
 # SoundBox
 
 Cross-platform desktop application for low level audio manipulation.
 
-Current support: Windows 10 only.
+## Continuous build status
 
-## Contents
+| Build Type  | Status |
+|-------------|--------|
+| **Windows** | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Windows?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=azure-pipeline-cmake) |
+| **Linux**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Linux?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=2&branchName=azure-pipeline-cmake)  |
+| **MacOS**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/MacOS?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=3&branchName=azure-pipeline-cmake) |
+
+## Project Documents
 -----------
-* [Setup Instructions](./source/docs/SetupInstructions.md)
+* [README](./source/README.md)
+* [Setup Instructions](.source/docs/SetupInstructions.md)
 
 ## Plans
 --------
@@ -29,11 +32,6 @@ Current support: Windows 10 only.
 ## Linux
 --------
 * TBD
-
-## Project Contents:
---------------------
-* Source
-    * [Building and Running](./source/README.md)
 
 ## [License](./LICENSE)
 -----------------------

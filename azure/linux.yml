@@ -1,0 +1,15 @@
+# Linux Pipeline for SoundBox
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+- script: |
+      cmake --version
+      python3 --version
+      mkdir build
+      cd build
+      cmake ../source
+      cmake --build .
