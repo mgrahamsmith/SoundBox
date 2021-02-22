@@ -18,9 +18,10 @@ jobs:
         cmake --system-information 
         pwd
         ls -l
-        mkdir build; cd build
-        ## - script: cmake ../source
-        ## - script: cmake --build .
+        mkdir build
+        cd build
+        pwd
+        ls -la
 
 - job: Windows
   pool:
@@ -35,9 +36,8 @@ jobs:
         dir
         md build 2>&1
         cd build
-        ## cmake ..\source
-        ## cmake --build .
-
+        cd
+        ls -la
 
 - job: macOS
   pool:
@@ -51,5 +51,5 @@ jobs:
           ls -l
           mkdir build
           cd build
-          ## cmake ../source
-          ## cmake --build .
+          pwd
+          ls -l
