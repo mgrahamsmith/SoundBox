@@ -2,6 +2,7 @@
 
 trigger:
 - master
+- develop/noise_1
 
 pool:
   vmImage: 'ubuntu-latest'

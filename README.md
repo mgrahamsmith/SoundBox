@@ -6,9 +6,9 @@ Cross-platform desktop application for low level audio manipulation.
 
 | Build Type  | Status |
 |-------------|--------|
-| **Windows** | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Windows?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=azure-pipeline-cmake) |
-| **Linux**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Linux?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=2&branchName=azure-pipeline-cmake)  |
-| **MacOS**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/MacOS?branchName=azure-pipeline-cmake)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=3&branchName=azure-pipeline-cmake) |
+| **Windows** | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Windows?branchName=develop/noise_1)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=develop/noise_1) |
+| **Linux**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Linux?branchName=develop/noise_1)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=2&branchName=develop/noise_1)  |
+| **MacOS**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/MacOS?branchName=develop/noise_1)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=3&branchName=develop/noise_1) |
 
 ## Project Documents
 -----------
