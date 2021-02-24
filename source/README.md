@@ -13,7 +13,7 @@ Starting here: [About MMDevice API](https://docs.microsoft.com/en-us/windows/win
 ### Links I needed or found helpful:
 * [__uuidof Operator](https://docs.microsoft.com/en-us/cpp/cpp/uuidof-operator?view=msvc-160)
 * [Welcome back to C++ - Modern C++](https://docs.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-160)
-    * Good dialogue on modern C++, goes over smart pointers and *Resource Allocation Is Initialization* principle.
+    *Good dialogue on modern C++, goes over smart pointers and Resource Allocation Is Initialization* principle.
 
 ### STOPPING POINT:
 Try this next: [RenderExclusiveEventDriven](https://docs.microsoft.com/en-us/windows/win32/coreaudio/renderexclusiveeventdriven)
@@ -21,3 +21,14 @@ Try this next: [RenderExclusiveEventDriven](https://docs.microsoft.com/en-us/win
 
 Going to need the [Windows SDK](https://msdn.microsoft.com/windowsvista/bb980924.aspx).
     * Not sure why it's the Windows 7, .NET Framework 4 SDK but hey, they told me to.
+
+After downloading, I can view the release notes at [Windows SDK for Windows 7 and .NET Framework 4 Release Notes](file:///C:/Users/Soti/ReleaseNotes_Win7_1RTMSDK.Htm)
+
+Something went wrong with the SDK install link, I didn't get the RenderExclusiveEventDriven sample in the path listed at this microsoft docs link `\Program Files\Microsoft SDKs\Windows\v7.0\Samples\Multimedia\Audio\RenderExclusiveEventDriven\...`
+
+Attempting to download the Windows 10 SDK, althought I'm not sure this is what I need, since this could be a Win32 API thing...  
+Downloading that good good from [here](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk/)
+
+Well... that download didn't work either, but good news I found [this in Github - Windows classic samples.](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/multimedia/audio/RenderExclusiveEventDriven)
+
+TODO: clone.
