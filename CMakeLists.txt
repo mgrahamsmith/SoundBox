@@ -6,3 +6,4 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 project(SoundBox LANGUAGES CXX)
 
 add_subdirectory(source)
+add_subdirectory(win_samples)

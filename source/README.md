@@ -31,4 +31,4 @@ Downloading that good good from [here](https://developer.microsoft.com/en-US/win
 
 Well... that download didn't work either, but good news I found [this in Github - Windows classic samples.](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/multimedia/audio/RenderExclusiveEventDriven)
 
-TODO: clone.
+Cloned classic samples, and copied code.  See [ReadMe.txt](../win_samples/ReadMe.txt) for instructions.
