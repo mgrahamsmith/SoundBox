@@ -2,14 +2,15 @@
 
 trigger:
 - master
+- develop/noise_1
 
 pool:
   vmImage: 'ubuntu-latest'
 steps:
 - script: |
-      cmake --version
-      python3 --version
-      mkdir build
-      cd build
-      cmake ..
-      cmake --build .
+    cmake --version
+    python3 --version
+    mkdir build
+    cd build
+    cmake ..
+    cmake --build .

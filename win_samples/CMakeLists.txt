@@ -6,12 +6,4 @@
 ## For a copy, see <https://opensource.org/licenses/MIT>.
 ##
 
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-
-project(SoundBox LANGUAGES CXX)
-
-add_subdirectory(source)
-
-if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
-    add_subdirectory(win_samples)
-endif()
+add_subdirectory(RenderExclusiveEventDriven)
