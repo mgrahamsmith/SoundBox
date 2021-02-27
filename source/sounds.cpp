@@ -6,7 +6,13 @@
 /// For a copy, see <https://opensource.org/licenses/MIT>.
 ///
 
+#include <iostream>
+
 #include "sounds.hpp"
+
+#ifdef IS_MSVC_CXX_COMPILER
+#include "mmdeviceapi.h"
+#endif
 
 // #include "combaseapi.h"
 // #include "mmdeviceapi.h"
@@ -33,5 +39,24 @@ std::string play_sound()
 ///
 std::string getAudioDevice()
 {
+<<<<<<< HEAD
     return std::string("Found fake audio device.");
+=======
+#ifdef IS_MSVC_CXX_COMPILER
+	LPVOID pEnumerator;
+	const CLSID CLSID_MMDeviceEnumerator = __uuidof(MMDeviceEnumerator);
+	const IID IID_IMMDeviceEnumerator = __uuidof(IMMDeviceEnumerator);
+
+	HRESULT hr = CoCreateInstance(
+		CLSID_MMDeviceEnumerator, NULL,
+		CLSCTX_ALL, IID_IMMDeviceEnumerator,
+		(void**)&pEnumerator);
+
+	std::cout << "Windows: HRESULT = " << hr << std::endl;
+	return std::string("Found Windows audio device.");
+
+#else
+    return std::string("Found fake audio device.");
+#endif
+>>>>>>> develop/noise_1
 }
