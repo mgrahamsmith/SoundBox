@@ -14,10 +14,6 @@ option(BuildWinSample "Build the windows sample." OFF )
 
 add_subdirectory(source)
 
-<<<<<<< HEAD
-if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
-=======
 if(CMAKE_CXX_COMPILER_ID MATCHES MSVC AND BuildWinSample)
->>>>>>> develop/noise_1
     add_subdirectory(win_samples)
 endif()
