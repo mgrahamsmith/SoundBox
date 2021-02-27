@@ -15,8 +15,8 @@ target_include_directories(${app_target}
         ${CMAKE_CURRENT_LIST_DIR}
     )
 
-message("CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
-message("CMAKE_CXX_COMPILER_ID=${CMAKE_CXX_COMPILER_ID}")
+message(STATUS "CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
+message(STATUS "CMAKE_CXX_COMPILER_ID=${CMAKE_CXX_COMPILER_ID}")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     message(STATUS "Configuring on Windows")
