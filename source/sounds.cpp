@@ -39,9 +39,6 @@ std::string play_sound()
 ///
 std::string getAudioDevice()
 {
-<<<<<<< HEAD
-    return std::string("Found fake audio device.");
-=======
 #ifdef IS_MSVC_CXX_COMPILER
 	LPVOID pEnumerator;
 	const CLSID CLSID_MMDeviceEnumerator = __uuidof(MMDeviceEnumerator);
@@ -58,5 +55,4 @@ std::string getAudioDevice()
 #else
     return std::string("Found fake audio device.");
 #endif
->>>>>>> develop/noise_1
 }
