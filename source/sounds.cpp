@@ -38,6 +38,9 @@ std::string play_sound()
 ///
 /// Return string with more descriptive HR result error.  For debugging.
 ///
+#ifndef IS_MSVC_CXX_COMPILER
+#define HRESULT int*;
+#endif
 std::string printError(HRESULT& hr)
 {
 	std::string retStr = "";
