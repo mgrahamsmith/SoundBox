@@ -15,7 +15,7 @@ Starting here: [About MMDevice API](https://docs.microsoft.com/en-us/windows/win
 * [Welcome back to C++ - Modern C++](https://docs.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-160)
     *Good dialogue on modern C++, goes over smart pointers and Resource Allocation Is Initialization* principle.
 
-### STOPPING POINT:
+### Some haphazard notes.
 Try this next: [RenderExclusiveEventDriven](https://docs.microsoft.com/en-us/windows/win32/coreaudio/renderexclusiveeventdriven)
     * This sample application uses the Core Audio APIs to render audio data to an output device specified by the user. This sample demonstrates event-driven buffering for a rendering client in exclusive mode. For an exclusive-mode stream, the client shares the endpoint buffer with the audio device.
 
@@ -35,3 +35,18 @@ Cloned classic samples, and copied code.  See [ReadMe.txt](../win_samples/ReadMe
 
 
 Still no luck - here are the supposed [Win10 samples](https://github.com/Microsoft/Windows-universal-samples) in Github.
+
+## Perhaps start here
+[Enumerating Audio Devices](https://docs.microsoft.com/en-us/windows/win32/coreaudio/enumerating-audio-devices):
+> The first task of a client audio application is to find a suitable audio device to use. The [MMDevice API](https://docs.microsoft.com/en-us/windows/win32/coreaudio/mmdevice-api) lets clients discover the audio endpoint devices.
+
+`getAudioDevice()` in [sounds.cpp](./sounds.cpp) is an example of this enumeration.  
+[About MMDevice API](https://docs.microsoft.com/en-us/windows/win32/coreaudio/mmdevice-api):
+> IMMDeviceEnumerator provides methods for enumerating audio endpoint devices.
+
+**END GOAL** is to get [Rendering a Stream](https://docs.microsoft.com/en-us/windows/win32/coreaudio/rendering-a-stream) working, after reading more carefully through [Enumerating Audio Devices](#perhaps-start-here)
+
+
+[sounds.cpp](./sounds.cpp) is grabbing the audio device now it seems :) -> the issue I was having was not calling `CoInitialize()` on the `IMMDeviceEnumerator`.
+
+I used some of the code from [Rendering a Stream](https://docs.microsoft.com/en-us/windows/win32/coreaudio/rendering-a-stream) as guidance since it calls `GetDefaultAudioEndpoint()`.
