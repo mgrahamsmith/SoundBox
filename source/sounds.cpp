@@ -15,12 +15,7 @@
 #include "Audioclient.h"
 #endif
 
-// #include "combaseapi.h"
-// #include "mmdeviceapi.h"
-
-// Didn't get very far here, next stop: https://docs.microsoft.com/en-us/windows/win32/coreaudio/rendering-a-stream
-
-/// For Details: https://docs.microsoft.com/en-us/windows/win32/coreaudio/mmdevice-api
+// TODO: remove all this macro garbage.
 
 std::string play_sound() 
 { 
@@ -52,9 +47,11 @@ std::string printError(HRESULT& hr)
 }
 #endif
 
+#ifdef IS_MSVC_CXX_COMPILER
 const CLSID CLSID_MMDeviceEnumerator = __uuidof(MMDeviceEnumerator);
 const IID IID_IMMDeviceEnumerator = __uuidof(IMMDeviceEnumerator);
 const IID IID_IAudioClient = __uuidof(IAudioClient);
+#endif
 
 ///
 /// Return audio device name.
