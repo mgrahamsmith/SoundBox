@@ -12,6 +12,6 @@
 #include <string>
 
 std::string play_sound();
-std::string getAudioDevice();
+const char* getAudioDevice();
 
 #endif

@@ -12,6 +12,7 @@
 
 #ifdef IS_MSVC_CXX_COMPILER
 #include "mmdeviceapi.h"
+#include "Audioclient.h"
 #endif
 
 // #include "combaseapi.h"
@@ -38,9 +39,7 @@ std::string play_sound()
 ///
 /// Return string with more descriptive HR result error.  For debugging.
 ///
-#ifndef IS_MSVC_CXX_COMPILER
-#define HRESULT int*;
-#endif
+#ifdef IS_MSVC_CXX_COMPILER
 std::string printError(HRESULT& hr)
 {
 	std::string retStr = "";
@@ -51,12 +50,16 @@ std::string printError(HRESULT& hr)
 	}
 	return retStr;
 }
+#endif
 
+const CLSID CLSID_MMDeviceEnumerator = __uuidof(MMDeviceEnumerator);
+const IID IID_IMMDeviceEnumerator = __uuidof(IMMDeviceEnumerator);
+const IID IID_IAudioClient = __uuidof(IAudioClient);
 
 ///
 /// Return audio device name.
 ///
-std::string getAudioDevice()
+const char* getAudioDevice()
 {
 #ifndef IS_MSVC_CXX_COMPILER
     return std::string("Found fake audio device.");
@@ -65,18 +68,11 @@ std::string getAudioDevice()
 	std::string retStr = std::string("ERROR STRING!");
 	LPWSTR deviceId = (LPWSTR) "NO DEVICE FOUND!";
 
-	const CLSID CLSID_MMDeviceEnumerator = __uuidof(MMDeviceEnumerator);
-	const IID IID_IMMDeviceEnumerator = __uuidof(IMMDeviceEnumerator);
 
 	HRESULT hr;
 	IMMDeviceEnumerator* pEnumerator = NULL;
 	IMMDevice* pDevice = NULL;
-	WAVEFORMATEX* pwfx = NULL;
-	UINT32 bufferFrameCount;
-	UINT32 numFramesAvailable;
-	UINT32 numFramesPadding;
-	BYTE* pData;
-	DWORD flags = 0;
+	IAudioClient* pAudioClient = NULL;
 
 	hr = CoInitialize(pEnumerator);
 
@@ -87,18 +83,21 @@ std::string getAudioDevice()
 
 	std::cout << "CoCreateInstance(...) HRESULT = " << printError(hr) << std::endl;
 
-	// hr = IMMDevice::Activate(
-	IMMDevice* pDefaultEndpoint = NULL;
-
 	hr = pEnumerator->GetDefaultAudioEndpoint(
-		eRender, eConsole, &pDefaultEndpoint);
+		eRender, eConsole, &pDevice);
 
 	std::cout << "GetDefaultAudioEndpoint(...) HRESULT = " << printError(hr) << std::endl;
-	 
-	pDefaultEndpoint->GetId(&deviceId);
-	retStr = std::string("Found Windows audio device: ") + (const char*)deviceId;
 
-	return retStr;
+	pDevice->GetId(&deviceId);
+	std::cout << "Found Windows default device: " << deviceId << std::endl;
+
+	hr = pDevice->Activate(
+		IID_IAudioClient, CLSCTX_ALL,
+		NULL, (void**)&pAudioClient);
+
+	std::cout << "Activate(...) HRESULT = " << printError(hr) << std::endl;
+	 
+	return (const char*)deviceId;
 
 #endif
 }
