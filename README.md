@@ -8,7 +8,7 @@ Cross-platform desktop application for low level audio manipulation.
 |-------------|--------|
 | **Windows** | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Windows?branchName=master)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=1&branchName=master) |
 | **Linux**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/Linux?branchName=master)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=2&branchName=master) |
-| **MacOS**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/MacOS?branchName=develop/noise_1)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=3&branchName=master) |
+| **MacOS**   | [![Build Status](https://dev.azure.com/mgrahamsmith/SoundBox/_apis/build/status/MacOS?branchName=master)](https://dev.azure.com/mgrahamsmith/SoundBox/_build/latest?definitionId=3&branchName=master) |
 
 ## Project Documents
 -----------
